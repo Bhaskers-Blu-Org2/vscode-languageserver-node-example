@@ -1,2 +1,3 @@
 # vscode-languageserver-node-example
-Sample language server implemented in Node
+
+This example is deprecated. Use the language server samples in this repository instead: https://github.com/Microsoft/vscode-extension-samples
