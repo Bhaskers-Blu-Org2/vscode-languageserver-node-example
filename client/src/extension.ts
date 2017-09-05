@@ -19,14 +19,14 @@ export function activate(context: ExtensionContext) {
 	// If the extension is launched in debug mode then the debug server options are used
 	// Otherwise the run options are used
 	let serverOptions: ServerOptions = {
-		run : { module: serverModule, transport: TransportKind.ipc },
-		debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
+		run : { module: serverModule, transport: TransportKind.stdio },
+		debug: { module: serverModule, transport: TransportKind.stdio, options: debugOptions }
 	}
 	
 	// Options to control the language client
 	let clientOptions: LanguageClientOptions = {
 		// Register the server for plain text documents
-		documentSelector: ['plaintext'],
+		documentSelector: [{scheme: 'file', language: 'plaintext'}],
 		synchronize: {
 			// Synchronize the setting section 'languageServerExample' to the server
 			configurationSection: 'languageServerExample',
